@@ -11,11 +11,13 @@ public class WordList{
     while (in.hasNext()){
       String s = in.next().toLowerCase();
       Word newWord = new Word(s,1);
+
       words.add(newWord);
       }
     in.close();
     return words;
     }
+
   class Word{ 
     String s;
     int count;
@@ -27,5 +29,8 @@ public class WordList{
       s = ins;
       count = incount;
     }
+      public String toString(){
+    return ("list:" + s + " count " +count);
+  }
   }
 }
