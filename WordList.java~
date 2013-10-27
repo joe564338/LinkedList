@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+public class WordList{
+  public static void main(String []args){
+    LinkedList<Word> words = new LinkedList<Word>();
+    ListIterator<Word> itr = words.listIterator();
+  }
+  public LinkedList<Word> scanFile() throws FileNotFoundException{
+    Scanner in = new Scanner(new File("emma.txt"));
+    in.useDelimiter("[^a-zA-Z]+");
+    while (in.hasNext()){
+      String s = in.next().toLowerCase();
+      Word newWord = new Word(s, 1);
+      words.add(newWord);
+    }
+  }
+  class Word{
+    public Word(){
+      String s;
+      int count = 1;
+    }
+    public Word(String ins, int incount){
+      s = ins;
+      count = incount;
+    }
+  }
+}   
