@@ -1,9 +1,11 @@
 import java.util.*;
 import java.io.*;
 public class WordList{
-
+  public WordList(){
+    LinkedList<Word> words = new LinkedList<Word>();
+  }  
   LinkedList<Word> words = new LinkedList<Word>();
-    public LinkedList<Word> scanFile() throws FileNotFoundException{
+  public LinkedList<Word> scanFile() throws FileNotFoundException{
     Scanner in = new Scanner(new File("emma.txt"));
     in.useDelimiter("[^a-zA-Z]+");
     while (in.hasNext()){
